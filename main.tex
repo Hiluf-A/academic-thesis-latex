@@ -1,0 +1,62 @@
+% main.tex - The Master Document File
+% This file provides the high-level structure of the document.
+
+% Load all packages, settings, and custom commands from the preamble file.
+\input{preamble.tex}
+
+\begin{document}
+
+% --- FRONT MATTER ---
+% This section includes the title page, declaration, abstract, etc.
+% Page numbers are in Roman numerals.
+%\frontmatter
+\pagestyle{empty} % No headers/footers on initial front matter pages
+
+\input{frontmatter/00_titlepage.tex}
+\clearpage
+\input{frontmatter/01_declaration.tex}
+\clearpage
+
+\pagestyle{fancy} % Re-enable professional headers/footers for the rest
+\input{frontmatter/02_abstract_acronyms.tex}
+\clearpage
+\input{frontmatter/03_acknowledgements.tex}
+\clearpage
+
+% --- TABLE OF CONTENTS & LISTS ---
+% Automatically generate the Table of Contents, List of Tables, and List of Figures.
+\tableofcontents
+\clearpage
+\listoftables
+\clearpage
+\listoffigures
+\clearpage
+
+% --- MAIN CONTENT ---
+% This is the body of the thesis, with chapters imported from separate files.
+% Switches to Arabic numerals for page numbers.
+%\mainmatter
+\pagestyle{fancy}
+
+\input{chapters/01_introduction.tex}
+\input{chapters/02_literature_review.tex}
+\input{chapters/03_methods.tex}
+\input{chapters/04_results.tex}
+\input{chapters/05_discussion.tex}
+\input{chapters/06_conclusions_recommendations.tex}
+\input{chapters/07_action_plan_budget.tex}
+
+\clearpage
+% Print the bibliography, titled "References".
+% The citations are managed by BibLaTeX from the 'references.bib' file.
+\printbibliography[title={References}]
+
+% --- APPENDICES & BIBLIOGRAPHY ---
+% This section includes supplementary materials and the bibliography.
+\appendix
+\pagestyle{fancy}
+\input{backmatter/appendix_questionnaire.tex}
+
+
+
+\end{document}

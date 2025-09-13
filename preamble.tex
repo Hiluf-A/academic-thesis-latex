@@ -1,0 +1,53 @@
+% preamble.tex - Packages and Document Configuration
+% FIX: Added command to remove paragraph indentation globally.
+
+\documentclass[12pt, a4paper, oneside]{scrreprt} % Using KOMA-Script for better typography
+
+% --- GEOMETRY & SPACING ---
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.5}
+\setlength{\parskip}{6pt} % Space between paragraphs
+\setlength{\parindent}{0pt} % Removes the indentation from the start of paragraphs
+\usepackage{microtype} % Improves justification and spacing
+
+% --- FONTS & ENCODING ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- GRAPHICS, TABLES, & FIGURES ---
+\usepackage{graphicx}
+\usepackage{amssymb} % Defines the \square symbol for the appendix
+\usepackage{booktabs} % For professional tables
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % Custom column type
+
+% --- HEADERS & FOOTERS ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- BIBLIOGRAPHY (BibLaTeX with IEEE Style) ---
+\usepackage[style=ieee, backend=biber, sorting=none]{biblatex}
+\addbibresource{references.bib} % The .bib file
+
+% --- HYPERLINKS & METADATA ---
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{hyperref}
+\hypersetup{
+    pdfauthor={Jane Doe}, % Anonymized
+    pdftitle={Assessment of the Impact of Solid Waste Disposal on Public Health (Portfolio Sample)},
+    pdfsubject={Undergraduate Thesis Portfolio Sample}
+}
+
+% --- OTHER UTILITIES ---
+\usepackage{enumitem} % For customizing lists
+
